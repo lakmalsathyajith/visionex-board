@@ -52,13 +52,96 @@ h6 {
 :root {
   --primary-color: #3772FF;
   --background-color: #FFFFFF;
+  --border-color:#E6E8EC;
+  --neutral-7-color:#F4F5F6;
 }
 
 body {
   background-color: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .board {
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 285px 1fr;
+}
+
+.board__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  /* width: 100%; */
+  grid-column: 1 / -1;
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  gap: 1.5rem;
+}
+
+.board__logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.board__create-button{
+  display: flex;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 0.25rem 0.75rem;
+  height: 48px;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.375rem;
+  border: none;
+  margin-left: auto;
+}
+
+.board__create{
+  
+}
+
+
+
+.board__action-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  /* padding: 0 0.75rem; */
+  
+}
+
+.board__search-bar{
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0.75rem;
+  background-color: var(--neutral-7-color);
+  height: 100%;
+  align-items: center;
+  border-radius: 0.5rem;
+  justify-content: start;
+  width: 240px;
+}
+.board__search-icon{
+  height: 16px;
+  width: 16px;
+  
+}
+
+.board__search-input{
+  background-color: var(--neutral-7-color);
+  border: none;
+  padding: 1rem 0;
+}
+
+.board__actions{
+  display: flex;
+  gap: 0.875rem;
 }

@@ -4,21 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <title>Board App</title>
 </head>
 
 <body>
   <div class="board">
-    <header>
-      <div class="logo">
-        <img src="/assets/icons/Frame.svg" alt="">
-        <div>Board App</div>
+    <header class="board__header">
+      <div class="board__logo">
+        <img class="board__logo-image" src="/assets/icons/Frame.svg" alt="Logo">
+        <div class="board__logo-text">Board App</div>
       </div>
-      <button>Create new board</button>
-      <div class="search">
-        <img src="/assets/icons/Search.svg" alt="">
-        <input type="text" placeholder="Search tasks" />
+      <button class="board__create-button">
+        Create new board
+        <img class="board__create-icon" src="assets/icons/Union.svg" alt="Plus icon">
+      </button>
+      <div class="board__action-bar">
+        <div class="board__search-bar">
+          <img class="board__search-icon" src="/assets/icons/Search.svg" alt="Search icon">
+          <input class="board__search-input" type="text" placeholder="Search tasks" />
+        </div>
+        <div class="board__actions">
+          <img class="board__action-icon" src="/assets/icons/Settings.svg" alt="Settings icon">
+          <img class="board__action-icon" src="/assets/icons/Bell.svg" alt="Notifications icon">
+          <img class="board__action-icon" src="/assets/icons/User profile.svg" alt="User profile icon">
+        </div>
       </div>
     </header>
     <aside>
