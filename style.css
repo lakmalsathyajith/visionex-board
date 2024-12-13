@@ -54,6 +54,9 @@ h6 {
   --background-color: #ffffff;
   --border-color: #e6e8ec;
   --neutral-7-color: #f4f5f6;
+  --neutral-3-color: #353945;
+  --neutral-4-color: #777E90;
+  --neutral-5-color: #b1b5c3;
 }
 
 body {
@@ -68,6 +71,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 285px 1fr;
+  /* height: 100vh; */
 }
 
 .board__header {
@@ -81,6 +85,7 @@ body {
   font-size: 0.75rem;
   gap: 1.5rem;
   font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .board__logo {
@@ -142,4 +147,106 @@ body {
 .board__actions {
   display: flex;
   gap: 0.875rem;
+}
+
+.board__sidebar {
+  grid-area: 2/1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.board__workspace {
+  display: flex;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--neutral-7-color);
+  width: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.board__workspace-main {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.board__workspace-logo {
+  padding: 0.875rem;
+  display: flex; /* Center content if necessary */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  border: 1px solid #ccc; /* Optional: border */
+  border-radius: 50%; /* Optional: rounded corners */
+}
+
+.board__workspace-logo-image {
+  height: 100%;
+}
+
+.board__workspace-title {
+  color: var(--neutral-5-color);
+  line-height: 1.5rem;
+  font-size: 0.825rem;
+}
+
+.board__workspace-folder {
+  color: var(--neutral-3-color);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.board__workspace-dropdown-icon {
+  width: 24px;
+  height: 24px;
+  margin: auto 0;
+}
+
+.board__menu {
+}
+.board__menu-list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.825rem;
+  list-style: none;
+}
+
+.board__menu-item{
+  padding: 0.75rem;
+  display: flex;
+  gap: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--neutral-4-color);
+}
+
+.board__menu-item-icon{
+  width: 24px;
+  height: 24px;
+  fill: var(--neutral-4-color);
+  stroke: var(--neutral-4-color);
+}
+
+.board__menu-global{
+  display: flex;
+  gap: 0.825rem;
+  flex-direction: column;
+  margin-top: auto;
+}
+.board__menu-logout{
+  display: flex;
+  background-color: var(--neutral-3-color);
+  border-radius: 0.5rem;
+  gap: 1.25rem;
+  padding: 0.75rem;
+  color: var(--background-color);
+}
+
+.board__menu-logout-icon{
+  width: 24px;
+  height: 24px;
+  fill: var(--background-color);
+  stroke: var(--background-color);
 }
