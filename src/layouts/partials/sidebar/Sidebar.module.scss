@@ -1,0 +1,107 @@
+@use './../../../styles/variables' as vars;
+
+.sidebar {
+  grid-area: 2/1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.5rem;
+
+  &__workspace {
+    display: flex;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid vars.$neutral-7-color;
+    width: 100%;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  &__workspace-main {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__workspace-logo {
+    padding: 0.875rem;
+    display: flex;
+    /* Center content if necessary */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    border: 1px solid #ccc;
+    /* Optional: border */
+    border-radius: 50%;
+    /* Optional: rounded corners */
+  }
+
+  &__workspace-logo-image {
+    height: 100%;
+  }
+
+  &__workspace-title {
+    color: vars.$neutral-5-color;
+    line-height: 1.5rem;
+    font-size: 0.825rem;
+  }
+
+  &__workspace-folder {
+    color: vars.$neutral-3-color;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  &__workspace-dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin: auto 0;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.825rem;
+    list-style: none;
+  }
+
+  &__menu-item {
+    padding: 0.75rem;
+    display: flex;
+    gap: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: vars.$neutral-4-color;
+  }
+
+  &__menu-item-icon {
+    width: 24px;
+    height: 24px;
+    fill: vars.$neutral-4-color;
+    stroke: vars.$neutral-4-color;
+  }
+
+  &__menu-global {
+    display: flex;
+    gap: 0.825rem;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  &__menu-logout {
+    display: flex;
+    background-color: vars.$neutral-3-color;
+    border-radius: 0.5rem;
+    gap: 1.25rem;
+    padding: 0.75rem;
+    color: vars.$background-color;
+  }
+
+  &__menu-logout-icon {
+    width: 24px;
+    height: 24px;
+    fill: vars.$background-color;
+    stroke: vars.$background-color;
+  }
+}
