@@ -1,0 +1,53 @@
+@use './../../styles/variables' as vars;
+
+.project {
+  display: flex;
+  grid-area: 2/-1;
+  height: 174px;
+  border: 1px solid black;
+  width: 100%;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__heading {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 2;
+    font-weight: 600;
+  }
+
+  &__status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.313rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 2;
+    color: vars.$neutral-5-color;
+  }
+
+  &__assigned {
+    display: flex;
+    color: vars.$neutral-5-color;
+    gap: 1.125rem;
+  }
+
+  &__assigned-user {
+    display: flex;
+  }
+}
+
+.swimlane {
+  grid-area: 3/-1;
+}
