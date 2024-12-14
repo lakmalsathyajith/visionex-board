@@ -21,7 +21,7 @@ const UserProfileIcon: FunctionComponent<IconProps> = ({
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="30" height="30" transform="translate(1 1)" fill="white" />
+      <rect width="30" height="30" transform="translate(1 1)" fill="" />
       <circle cx="16" cy="16" r="15.5" fill="#353945" stroke="white" />
       <path
         d="M11.0937 19.651L11.0833 19.6614C10.9427 19.3542 10.8541 19.0052 10.8177 18.6198C10.8541 19 10.9531 19.3437 11.0937 19.651Z"

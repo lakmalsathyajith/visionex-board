@@ -3,9 +3,11 @@
 .project {
   display: flex;
   grid-area: 2/-1;
-  height: 174px;
-  border: 1px solid black;
-  width: 100%;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid vars.$border-color;
+  justify-content: space-between;
 
   &__details {
     display: flex;
@@ -16,23 +18,24 @@
   &__heading {
     display: flex;
     gap: 1.5rem;
-    justify-content: space-between;
     align-items: center;
   }
 
   &__title {
     font-size: 1.5rem;
-    line-height: 2;
     font-weight: 600;
+
   }
 
   &__status {
     padding: 0.25rem 0.75rem;
     border-radius: 0.313rem;
+    font-size: 0.625rem;
   }
 
   &__description {
     font-size: 1rem;
+    font-weight: 400;
     line-height: 2;
     color: vars.$neutral-5-color;
   }
@@ -45,6 +48,54 @@
 
   &__assigned-user {
     display: flex;
+  }
+
+  &__assigned-user-icon {
+    display: flex;
+    margin-right: -10px;
+  }
+
+  &__assigned-extra-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -10px;
+    position: relative;
+    background-color: vars.$neutral-6-color;
+    color: vars.$neutral-3-color;
+    font-size: 0.563rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__manage {
+    display: flex;
+    gap: 0.625rem;
+    border-radius: 46px;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid vars.$neutral-6-color;
+    font-size: 0.75rem;
+    // line-height: 1.375;
+    margin-left: 10px;
+    align-items: center;
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: vars.$border-color;
+    width: 100%;
+  }
+
+  &__updated {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: vars.$neutral-5-color;
+    font-size: 0.875rem;
+    // padding: 0.5rem 0;
   }
 }
 

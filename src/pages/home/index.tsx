@@ -15,12 +15,23 @@ function HomePage() {
           <div className={styles["project__assigned"]}>
             assigned
             <div className={styles["project__assigned-user"]}>
-              <UserProfileIcon />
-              <UserProfileIcon />
-              <UserProfileIcon />
+              <UserProfileIcon
+                className={styles["project__assigned-user-icon"]}
+              />
+              <UserProfileIcon
+                className={styles["project__assigned-user-icon"]}
+              />
+              <UserProfileIcon
+                className={styles["project__assigned-user-icon"]}
+              />
+              <div className={styles["project__assigned-extra-icon"]}>+2</div>
             </div>
-            <span>Manage</span>
+            <div className={styles["project__manage"]}>Manage</div>
           </div>
+        </div>
+        <div className={styles["project__divider"]}></div>
+        <div className={styles["project__updated"]}>
+          last updated on: 04 April, 2022
         </div>
       </section>
       <section className="swimlane">jkjkhgh76yrgerfgdg</section>
