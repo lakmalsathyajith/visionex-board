@@ -4,19 +4,23 @@ import useIconColor from "./useIconColor";
 interface IconProps {
   variant?: "default" | "active";
   className?: string;
+  height?: number;
+  width?: number;
 }
 
 const ArrowDown: FunctionComponent<IconProps> = ({
   variant = "default",
   className = "",
+  height = 24,
+  width = 24,
 }) => {
   const { activeColor, defaultColor } = useIconColor();
 
   const fillColor = variant === "active" ? activeColor : defaultColor;
   return (
     <svg
-      width="24"
-      height="25"
+      width={width}
+      height={height}
       viewBox="0 0 24 25"
       fill={fillColor}
       className={className}

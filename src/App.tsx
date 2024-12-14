@@ -1,59 +1,9 @@
-import "./App.css";
-import ArrowDown from "./icons/ArrowDown";
+import Header from "./layouts/partials/header";
 
 function App() {
   return (
     <div className="board">
-      <ArrowDown />
-      <header className="board__header">
-        <div className="board__logo">
-          <img
-            className="board__logo-image"
-            src="/assets/icons/Frame.svg"
-            alt="Logo"
-          />
-          <div className="board__logo-text">Board App</div>
-        </div>
-        <button className="board__create-button">
-          <span>Create new board</span>
-          <img
-            className="board__create-icon"
-            src="assets/icons/Union.svg"
-            alt="Plus icon"
-          />
-        </button>
-        <div className="board__action-bar">
-          <div className="board__search-bar">
-            <img
-              className="board__search-icon"
-              src="/assets/icons/Search.svg"
-              alt="Search icon"
-            />
-            <input
-              className="board__search-input"
-              type="text"
-              placeholder="Search tasks"
-            />
-          </div>
-          <div className="board__actions">
-            <img
-              className="board__action-icon"
-              src="/assets/icons/Settings.svg"
-              alt="Settings icon"
-            />
-            <img
-              className="board__action-icon"
-              src="/assets/icons/Bell.svg"
-              alt="Notifications icon"
-            />
-            <img
-              className="board__action-icon"
-              src="/assets/icons/User profile.svg"
-              alt="User profile icon"
-            />
-          </div>
-        </div>
-      </header>
+      <Header />
       <aside className="board__sidebar">
         <div className="board__workspace">
           <div className="board__workspace-main">

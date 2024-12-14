@@ -1,0 +1,76 @@
+@use './../../../styles/variables' as vars;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  grid-column: 1 / -1;
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  gap: 1.5rem;
+  font-weight: 500;
+  border-bottom: 1px solid vars.$border-color;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__create-button {
+    display: flex;
+    background-color: vars.$primary-color;
+    color: vars.$background-color;
+    padding: 0.25rem 0.75rem;
+    height: 48px;
+    gap: 0.75rem;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0.375rem;
+    border: none;
+    margin-left: auto;
+  }
+
+  &__create-icon {
+    width: 24px;
+    height: 24px;
+    padding: 0.4rem;
+  }
+
+  &__action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    /* padding: 0 0.75rem; */
+  }
+
+  &__search-bar {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+    background-color: vars.$neutral-7-color;
+    align-items: center;
+    border-radius: 0.5rem;
+    justify-content: start;
+    width: 240px;
+  }
+
+  &__search-icon {
+    height: 16px;
+    width: 16px;
+  }
+
+  &__search-input {
+    background-color: vars.$neutral-7-color;
+    border: none;
+    padding: 1rem 0;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.875rem;
+  }
+}
