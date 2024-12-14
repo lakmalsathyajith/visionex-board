@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import useIconColor from "./useIconColor";
 
 interface IconProps {
   variant?: "default" | "active";
@@ -9,12 +10,7 @@ const ArrowDown: FunctionComponent<IconProps> = ({
   variant = "default",
   className = "",
 }) => {
-  const defaultColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--default-icon-color")
-    .trim();
-  const activeColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--active-icon-color")
-    .trim();
+  const { activeColor, defaultColor } = useIconColor();
 
   const fillColor = variant === "active" ? activeColor : defaultColor;
   return (
