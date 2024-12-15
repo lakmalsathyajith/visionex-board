@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Finance Digest App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React Js application which implements a project management dashboard
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## React JS 
+React is a popular open-source JavaScript library for building user interfaces (UIs) and user interface components. It was developed and is maintained by Facebook and a community of individual developers and companies. React is widely used for building dynamic and responsive web applications, and it has gained significant adoption in the web development industry.
 
-## Expanding the ESLint configuration
+### Key features
+Component-Based Architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Virtual DOM
 
-- Configure the top-level `parserOptions` property like this:
+Declarative Syntax
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+JSX (JavaScript XML)
+
+State Management
+
+Unidirectional Data Flow
+
+Reusable Components
+
+Virtual DOM Diffing
+
+Lifecycle Methods (Class Components)
+
+Hooks
+
+
+## Acknowledgements
+
+`Redux` is use to manage state
+
+`Context API` is used to manage drag and drop functionality.
+
+`Drag and Drop` is implemented using native HTML5 Drag and Drop API.
+
+`saas modules` are used to manage the styling together with the componenent.
+
+`Linters` are set to make sure the coding standards are maintained.
+
+The project is initiated using latest version of `vite`
+
+
+### Versions
+`React Js(v18.3.1), saas(v1.83.0), redux(5.0.1)`
+## Deployment
+
+To view in dev mode
+
+```bash
+  npm install | yarn install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To deploy and run locally
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+  npm dev | yarn dev
 ```
+Follow the URL informs
+
+### Tests
+```bash
+  npm test | yarn test
+```
+## Authors
+
+- [@sathyajith](https://github.com/lakmalsathyajith)
