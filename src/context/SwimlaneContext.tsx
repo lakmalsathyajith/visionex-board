@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { useDispatch } from "react-redux";
 import { updateTaskStatus } from "../store/actions/projectActions";
+import { TypedDispatch } from "../store";
 
 type AuthContextType = {
   task: number | null;
@@ -34,7 +35,7 @@ export const SwimlaneContextProvider: React.FC<SwimlaneProviderProps> = ({
   children,
 }) => {
   const [task, setTask] = useState<number | null>(null);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<TypedDispatch>();
 
   const onDragStart = (_e: DragEvent, id: number) => {
     setTask(id);

@@ -8,7 +8,8 @@
   gap: 1.5rem;
   border-right: 1px solid vars.$border-color;
   justify-content: space-between;
-  max-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+  overflow-y: auto;
 
   &__workspace {
     display: flex;
@@ -69,6 +70,19 @@
     list-style: none;
   }
 
+  &__menu-item-icon {
+    width: 24px;
+    height: 24px;
+    fill: vars.$neutral-4-color;
+    stroke: vars.$neutral-4-color;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+
+    &:hover {
+      fill: vars.$primary-color;
+      stroke: vars.$primary-color;
+    }
+  }
+
   &__menu-item {
     padding: 0.75rem;
     display: flex;
@@ -76,14 +90,20 @@
     font-size: 1rem;
     line-height: 1.5rem;
     color: vars.$neutral-4-color;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: vars.$primary-color;
+
+      &__menu-item-icon {
+        fill: vars.$primary-color;
+        stroke: vars.$primary-color;
+      }
+    }
   }
 
-  &__menu-item-icon {
-    width: 24px;
-    height: 24px;
-    fill: vars.$neutral-4-color;
-    stroke: vars.$neutral-4-color;
-  }
+
 
   &__menu-global {
     display: flex;
@@ -106,5 +126,27 @@
     height: 24px;
     fill: vars.$background-color;
     stroke: vars.$background-color;
+  }
+
+  &__dropdown-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 0.75rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    border: 1px solid vars.$border-color;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    gap: 0.625rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 0.825rem;
+
+    &:hover {
+      color: vars.$primary-color;
+    }
   }
 }

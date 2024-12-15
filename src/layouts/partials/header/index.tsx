@@ -6,10 +6,9 @@ const Header = () => {
       <div className={styles["header__logo"]}>
         <img
           className={styles["header__logo-image"]}
-          src="/assets/icons/Frame.svg"
+          src="/assets/logo.svg"
           alt="Logo"
         />
-        <div className={styles["header__logo-text"]}>Board App</div>
       </div>
       <button className={styles["header__create-button"]}>
         <span>Create new board</span>

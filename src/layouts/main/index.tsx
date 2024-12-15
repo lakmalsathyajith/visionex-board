@@ -13,7 +13,7 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({ children }) => {
     <div className={styles.board}>
       <Header />
       <Sidebar />
-      <main>{children}</main>
+      <main className={styles.board__main}>{children}</main>
     </div>
   );
 };
