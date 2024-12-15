@@ -12,6 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import formatDate from "../../utils/dateFormatter";
 import groupByStatus from "../../utils/groupTasks";
+import { SwimlaneContextProvider } from "../../context/SwimlaneContext";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -76,24 +77,30 @@ function HomePage() {
           Last updated on: {formatDate(selectedProject.lastUpdated)}
         </div>
       </section>
-      <Swimlane>
-        <Swimlane.Tab
-          label={<Badge variant="todo" />}
-          data={groupedTasks["todo"]}
-        />
-        <Swimlane.Tab
-          label={<Badge variant="inprogress" />}
-          data={groupedTasks["in-progress"]}
-        />
-        <Swimlane.Tab
-          label={<Badge variant="approved" />}
-          data={groupedTasks["approved"]}
-        />
-        <Swimlane.Tab
-          label={<Badge variant="reject" />}
-          data={groupedTasks["rejected"]}
-        />
-      </Swimlane>
+      <SwimlaneContextProvider>
+        <Swimlane>
+          <Swimlane.Tab
+            label={<Badge variant="todo" />}
+            data={groupedTasks["todo"]}
+            id="todo"
+          />
+          <Swimlane.Tab
+            label={<Badge variant="inprogress" />}
+            data={groupedTasks["in-progress"]}
+            id="in-progress"
+          />
+          <Swimlane.Tab
+            label={<Badge variant="approved" />}
+            data={groupedTasks["approved"]}
+            id="approved"
+          />
+          <Swimlane.Tab
+            label={<Badge variant="reject" />}
+            data={groupedTasks["rejected"]}
+            id="rejected"
+          />
+        </Swimlane>
+      </SwimlaneContextProvider>
     </MainLayout>
   );
 }
