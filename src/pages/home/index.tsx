@@ -1,4 +1,6 @@
+import Badge from "../../components/Badge";
 import Card from "../../components/Card";
+import Swimlane from "../../components/Swimlane";
 import DotsIcon from "../../icons/DotsIcon";
 import PencilIcon from "../../icons/PencilIcon";
 import Plus2Icon from "../../icons/Plus2Icon";
@@ -46,10 +48,16 @@ function HomePage() {
         </div>
         <div className={styles["project__divider"]}></div>
         <div className={styles["project__updated"]}>
-          last updated on: 04 April, 2022
+          Last updated on: 04 April, 2022
         </div>
       </section>
-      <section className={styles["swimlane"]}>
+      <Swimlane>
+        <Swimlane.Tab label={<Badge variant="todo" />} />
+        <Swimlane.Tab label={<Badge variant="inprogress" />} />
+        <Swimlane.Tab label={<Badge variant="approved" />} />
+        <Swimlane.Tab label={<Badge variant="reject" />} />
+      </Swimlane>
+      {/* <section className={styles["swimlane"]}>
         <div className={styles["swimlane__tab"]}>
           <div className={styles["swimlane__header"]}>
             <h2 className={styles["swimlane__title"]}>ToDo</h2>
@@ -95,7 +103,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </MainLayout>
   );
 }

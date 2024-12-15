@@ -1,0 +1,25 @@
+@use './../../styles/variables' as vars;
+
+.badge {
+  border-radius: 46px;
+  padding: 0.25rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  &--inprogress {
+    background-color: vars.$task-5-color;
+  }
+
+  &--todo {
+    background-color: vars.$neutral-6-color;
+  }
+
+  &--approved {
+    background-color: vars.$task-1-color;
+  }
+
+  &--reject {
+    background-color: vars.$task-2-color;
+    color: vars.$background-color;
+  }
+}

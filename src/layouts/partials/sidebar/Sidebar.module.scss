@@ -8,6 +8,7 @@
   gap: 1.5rem;
   border-right: 1px solid vars.$border-color;
   justify-content: space-between;
+  max-height: calc(100vh - 80px);
 
   &__workspace {
     display: flex;
