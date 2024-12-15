@@ -1,4 +1,4 @@
-# Finance Digest App
+# Project Management Dashboard
 
 This is a simple React Js application which implements a project management dashboard
 
