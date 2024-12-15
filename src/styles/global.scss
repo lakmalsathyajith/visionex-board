@@ -54,6 +54,7 @@ h6 {
 :root {
   --active-icon-color: #{vars.$primary-color};
   --default-icon-color: #{vars.$neutral-4-color};
+  --faded-icon-color: #{vars.$neutral-5-color};
 }
 
 html {

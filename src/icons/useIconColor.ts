@@ -6,7 +6,11 @@ const useIconColor = () => {
     .getPropertyValue("--active-icon-color")
     .trim();
 
-  return { defaultColor, activeColor };
+  const fadedColor = getComputedStyle(document.documentElement)
+    .getPropertyValue("--faded-icon-color")
+    .trim();
+
+  return { defaultColor, activeColor, fadedColor };
 };
 
 export default useIconColor;

@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import useIconColor from "./useIconColor";
 
 interface IconProps {
-  variant?: "default" | "active";
+  variant?: "default" | "active" | "faded";
   className?: string;
   height?: number;
   width?: number;
@@ -14,9 +14,20 @@ const CalendarIcon: FunctionComponent<IconProps> = ({
   height = 24,
   width = 24,
 }) => {
-  const { activeColor, defaultColor } = useIconColor();
+  const { activeColor, defaultColor, fadedColor } = useIconColor();
 
-  const fillColor = variant === "active" ? activeColor : defaultColor;
+  let fillColor = defaultColor;
+  switch (variant) {
+    case "active":
+      fillColor = activeColor;
+      break;
+    case "faded":
+      fillColor = fadedColor;
+      break;
+    default:
+      fillColor = defaultColor;
+      break;
+  }
   return (
     <svg
       className={className}
