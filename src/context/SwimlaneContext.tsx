@@ -10,10 +10,10 @@ import { updateTaskStatus } from "../store/actions/projectActions";
 
 type AuthContextType = {
   task: number | null;
-  onDragStart: (username: string) => void;
-  onDragEnd: () => void;
-  onDrop: () => void;
-  onDragEnter: () => void;
+  onDragStart: (_e: DragEvent, id: number) => void;
+  onDragEnd: (e: DragEvent) => void;
+  onDrop: (_e: DragEvent, id: string) => void;
+  onDragEnter: (e: DragEvent) => void;
 };
 
 const SwimlaneContext = createContext<AuthContextType | undefined>(undefined);

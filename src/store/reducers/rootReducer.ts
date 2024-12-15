@@ -1,7 +1,10 @@
 import { combineReducers } from "redux";
-import tasks from "./tasksReducer";
-import projects from "./projectsReducer";
+import projects, { ProjectState } from "./projectsReducer";
 
-const rootReducer = combineReducers({ tasks, projects });
+export type RootState = {
+  projects: ProjectState;
+};
+
+const rootReducer = combineReducers({ projects });
 
 export default rootReducer;

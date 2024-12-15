@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Badge from "../../components/Badge";
 import Swimlane from "../../components/Swimlane";
 import PencilIcon from "../../icons/PencilIcon";
@@ -13,10 +13,15 @@ import { useDispatch, useSelector } from "react-redux";
 import formatDate from "../../utils/dateFormatter";
 import groupByStatus from "../../utils/groupTasks";
 import { SwimlaneContextProvider } from "../../context/SwimlaneContext";
+import { RootState } from "../../store/reducers/rootReducer";
+import { TypedDispatch } from "../../store";
 
 function HomePage() {
-  const dispatch = useDispatch();
-  const { projects, selectedProject } = useSelector((state) => state.projects);
+  const dispatch = useDispatch<TypedDispatch>();
+  const { projects, selectedProject } = useSelector(
+    (state: RootState) => state.projects
+  );
+
   const groupedTasks = groupByStatus(selectedProject.tasks);
 
   useEffect(() => {
@@ -29,7 +34,7 @@ function HomePage() {
     }
   }, [dispatch, projects]);
 
-  console.log(groupedTasks);
+  if (!selectedProject) return;
 
   return (
     <MainLayout>

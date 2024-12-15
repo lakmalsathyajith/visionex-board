@@ -4,9 +4,12 @@ import DotsIcon from "../../../icons/DotsIcon";
 import Plus2Icon from "../../../icons/Plus2Icon";
 import styles from "./../Swimlane.module.scss";
 import { useSwimlaneContext } from "../../../context/SwimlaneContext";
+import { Task } from "../../../types/dataTypes";
 
-interface TabProps {
+export interface TabProps {
   label: ReactElement;
+  data: Task[];
+  id: string;
 }
 const Tab: FunctionComponent<TabProps> = ({ label, data, id }) => {
   const { onDragEnter, onDrop } = useSwimlaneContext();
@@ -24,7 +27,7 @@ const Tab: FunctionComponent<TabProps> = ({ label, data, id }) => {
           <DotsIcon />
         </div>
       </div>
-      {data && data.map((data) => <Card data={data} />)}
+      {data && data.map((data) => <Card data={data} key={data.id} />)}
     </div>
   );
 };

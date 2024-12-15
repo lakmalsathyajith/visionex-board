@@ -1,13 +1,25 @@
-import { Task } from "../../types/dataTypes";
+import { Project, Task } from "../../types/dataTypes";
 import {
   ADD_PROJECTS,
   SET_SELECTED_PROJECT,
   UPDATE_TASK_STATUS,
 } from "./../actiontypes/projectsActionTypes";
 
-const initialState = {
+export interface ProjectState {
+  projects: Project[];
+  selectedProject: Project;
+}
+
+const initialState: ProjectState = {
   projects: [],
-  selectedProject: {},
+  selectedProject: {
+    id: 1,
+    name: "Sample Project",
+    description: "",
+    assigned: [],
+    lastUpdated: "",
+    tasks: [],
+  },
 };
 
 const projectsReducer = (state = initialState, action) => {
@@ -23,13 +35,14 @@ const projectsReducer = (state = initialState, action) => {
         selectedProject: { ...action.payload },
       };
     case UPDATE_TASK_STATUS: {
-      const { tasks } = state.selectedProject;
       const { taskId, status } = action.payload;
-      tasks.forEach((task: Task) => {
-        if (task.id === taskId) task.status = status;
-      });
+      let tasks: Task[] = [];
+      if (state.selectedProject) {
+        tasks = state.selectedProject?.tasks.map((task: Task) =>
+          task.id === taskId ? { ...task, status } : task
+        );
+      }
 
-      console.log("------", taskId, status, tasks);
       return {
         ...state,
         selectedProject: { ...state.selectedProject, tasks: [...tasks] },

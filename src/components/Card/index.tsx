@@ -9,12 +9,14 @@ import FlashIcon from "../../icons/FlashIcon";
 import CalendarIcon from "../../icons/CalendarIcon";
 import getSlicedElementsAndRestCount from "../../utils/getSlicedElementsAndRestCount";
 import { useSwimlaneContext } from "../../context/SwimlaneContext";
+import { Task } from "../../types/dataTypes";
 
-interface CardProps {}
+interface CardProps {
+  data: Task;
+}
 
 const Card: FunctionComponent<CardProps> = ({ data }) => {
-  const { id, category, title, priority, users, subtasks, comments, dueDate } =
-    data;
+  const { id, category, title, priority, users, subtasks, comments } = data;
   const { slicedElements, restCount } = getSlicedElementsAndRestCount(users, 3);
 
   const { onDragStart, onDragEnd } = useSwimlaneContext();
@@ -36,8 +38,9 @@ const Card: FunctionComponent<CardProps> = ({ data }) => {
       <h3 className={styles["card__title"]}>{title}</h3>
       <div className={styles["card__assigned"]}>
         <div className={styles["card__assigned-user"]}>
-          {slicedElements.map(() => (
+          {slicedElements.map((element) => (
             <UserProfileIcon
+              key={element}
               height={20}
               width={20}
               className={styles["card__assigned-icon"]}

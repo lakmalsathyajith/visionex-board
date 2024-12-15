@@ -33,7 +33,7 @@ export const setSelectedProject = (project: Project) => {
 };
 
 export const updateTaskStatus =
-  (taskId: number, status: string) => (dispatch: Dispatch) => {
+  (taskId: number | null, status: string) => (dispatch: Dispatch) => {
     return dispatch({
       type: UPDATE_TASK_STATUS,
       payload: { taskId, status },
