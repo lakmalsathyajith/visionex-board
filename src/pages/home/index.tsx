@@ -1,24 +1,49 @@
+import { useEffect, useState } from "react";
 import Badge from "../../components/Badge";
-import Card from "../../components/Card";
 import Swimlane from "../../components/Swimlane";
-import DotsIcon from "../../icons/DotsIcon";
 import PencilIcon from "../../icons/PencilIcon";
-import Plus2Icon from "../../icons/Plus2Icon";
 import UserProfileIcon from "../../icons/UserProfileIcon";
 import MainLayout from "../../layouts/main";
 import styles from "./Home.module.scss";
+import {
+  fetchProjects,
+  setSelectedProject,
+} from "../../store/actions/projectActions";
+import { useDispatch, useSelector } from "react-redux";
+import formatDate from "../../utils/dateFormatter";
+import groupByStatus from "../../utils/groupTasks";
 
 function HomePage() {
+  const dispatch = useDispatch();
+  const { projects, selectedProject } = useSelector((state) => state.projects);
+  const groupedTasks = groupByStatus(selectedProject.tasks);
+
+  useEffect(() => {
+    dispatch(fetchProjects());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (projects.length) {
+      dispatch(setSelectedProject(projects[1]));
+    }
+  }, [dispatch, projects]);
+
+  console.log(groupedTasks);
+
   return (
     <MainLayout>
       <section className={styles["project"]}>
         <div className={styles["project__details"]}>
           <div>
             <div className={styles["project__heading"]}>
-              <h1 className={styles["project__title"]}>Sport Xi Project</h1>
+              <h1 className={styles["project__title"]}>
+                {selectedProject.name}
+              </h1>
               <span className={styles["project__status"]}>In progress</span>
             </div>
-            <h2 className={styles["project__description"]}>event production</h2>
+            <h2 className={styles["project__description"]}>
+              {selectedProject.description}
+            </h2>
           </div>
           <div className={styles["project__assigned"]}>
             assigned
@@ -48,62 +73,27 @@ function HomePage() {
         </div>
         <div className={styles["project__divider"]}></div>
         <div className={styles["project__updated"]}>
-          Last updated on: 04 April, 2022
+          Last updated on: {formatDate(selectedProject.lastUpdated)}
         </div>
       </section>
       <Swimlane>
-        <Swimlane.Tab label={<Badge variant="todo" />} />
-        <Swimlane.Tab label={<Badge variant="inprogress" />} />
-        <Swimlane.Tab label={<Badge variant="approved" />} />
-        <Swimlane.Tab label={<Badge variant="reject" />} />
+        <Swimlane.Tab
+          label={<Badge variant="todo" />}
+          data={groupedTasks["todo"]}
+        />
+        <Swimlane.Tab
+          label={<Badge variant="inprogress" />}
+          data={groupedTasks["in-progress"]}
+        />
+        <Swimlane.Tab
+          label={<Badge variant="approved" />}
+          data={groupedTasks["approved"]}
+        />
+        <Swimlane.Tab
+          label={<Badge variant="reject" />}
+          data={groupedTasks["rejected"]}
+        />
       </Swimlane>
-      {/* <section className={styles["swimlane"]}>
-        <div className={styles["swimlane__tab"]}>
-          <div className={styles["swimlane__header"]}>
-            <h2 className={styles["swimlane__title"]}>ToDo</h2>
-            <div className={styles["swimlane__actions"]}>
-              <Plus2Icon />
-              <DotsIcon />
-            </div>
-          </div>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-        <div className={styles["swimlane__tab"]}>
-          <div className={styles["swimlane__header"]}>
-            <h2 className={styles["swimlane__title"]}>In progress</h2>
-            <div className={styles["swimlane__actions"]}>
-              <Plus2Icon />
-              <DotsIcon />
-            </div>
-          </div>
-          <div className={styles["swimlane__card"]}></div>
-          <div className={styles["swimlane__card"]}></div>
-          <div className={styles["swimlane__card"]}></div>
-        </div>
-        <div className={styles["swimlane__tab"]}>
-          <div className={styles["swimlane__header"]}>
-            <h2 className={styles["swimlane__title"]}>Approved</h2>
-            <div className={styles["swimlane__actions"]}>
-              <Plus2Icon />
-              <DotsIcon />
-            </div>
-          </div>
-          <div className={styles["swimlane__card"]}></div>
-          <div className={styles["swimlane__card"]}></div>
-        </div>
-        <div className={styles["swimlane__tab"]}>
-          <div className={styles["swimlane__header"]}>
-            <h2 className={styles["swimlane__title"]}>Reject</h2>
-            <div className={styles["swimlane__actions"]}>
-              <Plus2Icon />
-              <DotsIcon />
-            </div>
-          </div>
-        </div>
-      </section> */}
     </MainLayout>
   );
 }

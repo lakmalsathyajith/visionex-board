@@ -7,9 +7,18 @@ import styles from "./../Swimlane.module.scss";
 interface TabProps {
   label: ReactElement;
 }
-const Tab: FunctionComponent<TabProps> = ({ label }) => {
+const Tab: FunctionComponent<TabProps> = ({ label, data }) => {
   return (
-    <div className={styles["swimlane__tab"]}>
+    <div
+      className={styles["swimlane__tab"]}
+      onDrop={() => {
+        console.log("===dropped");
+      }}
+      onDragOver={(e) => {
+        e.preventDefault();
+        console.log("===drag over");
+      }}
+    >
       <div className={styles["swimlane__header"]}>
         {label}
         {/* <h2 className={styles["swimlane__title"]}>{label}</h2> */}
@@ -18,10 +27,7 @@ const Tab: FunctionComponent<TabProps> = ({ label }) => {
           <DotsIcon />
         </div>
       </div>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {data && data.map((data) => <Card data={data} />)}
     </div>
   );
 };

@@ -4,12 +4,15 @@ import Tab from "./Tab";
 
 interface SwimlaneProps {
   children: ReactNode;
-  Tab: ReactNode;
 }
 const Swimlane: FunctionComponent<SwimlaneProps> = ({ children }) => {
   return <section className={styles["swimlane"]}>{children}</section>;
 };
 
-Swimlane.Tab = Tab;
+interface SwimlaneWithTab extends FunctionComponent<SwimlaneProps> {
+  Tab: typeof Tab;
+}
+
+(Swimlane as SwimlaneWithTab).Tab = Tab;
 
 export default Swimlane;

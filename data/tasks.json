@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "name": "Design Management System",
+    "description": "A project to organize and manage design-related tasks.",
+    "assigned": [200, 201],
+    "lastUpdated": "2024-12-15T12:00:00Z",
+    "tasks": [
+      {
+        "id": 1,
+        "category": "Research",
+        "title": "User Interview",
+        "priority": "Low",
+        "status": "todo",
+        "users": [101, 102, 103,104, 105],
+        "subtasks": 2,
+        "comments": 2,
+        "dueDate": "Tomorrow"
+      },
+      {
+        "id": 2,
+        "category": "Design",
+        "title": "UI Design",
+        "priority": "High",
+        "status": "in-progress",
+        "users": [103, 104],
+        "subtasks": 2,
+        "comments": 2,
+        "dueDate": "Tomorrow"
+      },
+      {
+        "id": 3,
+        "category": "Research",
+        "title": "Prototype",
+        "priority": "Low",
+        "status": "approved",
+        "users": [105],
+        "subtasks": 35,
+        "comments": 243,
+        "dueDate": null
+      },
+      {
+        "id": 4,
+        "category": "Other",
+        "title": "Group Management",
+        "priority": "Low",
+        "status": "in-progress",
+        "users": [101, 106, 107],
+        "subtasks": 329,
+        "comments": null,
+        "link": "Group Call"
+      },
+      {
+        "id": 5,
+        "category": "Design",
+        "title": "Design System",
+        "priority": "Medium",
+        "status": "rejected",
+        "users": [108, 109],
+        "subtasks": 3,
+        "comments": 8,
+        "reports": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Redesign",
+    "description": "Redesigning the mobile application to enhance user experience.",
+    "assigned": [202, 203],
+    "lastUpdated": "2024-12-14T11:00:00Z",
+    "tasks": [
+      {
+        "id": 1,
+        "category": "Design",
+        "title": "App Interface Redesign",
+        "priority": "High",
+        "status": "in-progress",
+        "users": [104, 105],
+        "subtasks": 3,
+        "comments": 6,
+        "dueDate": "Next Week"
+      },
+      {
+        "id": 2,
+        "category": "Development",
+        "title": "API Integration",
+        "priority": "Medium",
+        "status": "todo",
+        "users": [106],
+        "subtasks": 1,
+        "comments": 2,
+        "dueDate": "5 January, 2025"
+      },
+      {
+        "id": 3,
+        "category": "Design",
+        "title": "UI Testing",
+        "priority": "Low",
+        "status": "approved",
+        "users": [107, 108],
+        "subtasks": 4,
+        "comments": 3,
+        "dueDate": "10 January, 2025"
+      },
+      {
+        "id": 4,
+        "category": "Development",
+        "title": "Bug Fixes",
+        "priority": "High",
+        "status": "in-progress",
+        "users": [109],
+        "subtasks": 2,
+        "comments": 5,
+        "dueDate": "Next Week"
+      },
+      {
+        "id": 5,
+        "category": "Marketing",
+        "title": "App Launch Announcement",
+        "priority": "Medium",
+        "status": "todo",
+        "users": [110, 111],
+        "subtasks": 1,
+        "comments": 1,
+        "dueDate": "15 January, 2025"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "E-commerce Website Redesign",
+    "description": "Improving the design and functionality of the e-commerce platform.",
+    "assigned": [204, 205],
+    "lastUpdated": "2024-12-10T15:00:00Z",
+    "tasks": [
+      {
+        "id": 1,
+        "category": "Design",
+        "title": "Landing Page Redesign",
+        "priority": "High",
+        "status": "todo",
+        "users": [106, 107],
+        "subtasks": 4,
+        "comments": 3,
+        "dueDate": "5 January, 2025"
+      },
+      {
+        "id": 2,
+        "category": "Development",
+        "title": "Payment Gateway Setup",
+        "priority": "Medium",
+        "status": "approved",
+        "users": [108],
+        "subtasks": 2,
+        "comments": 7,
+        "dueDate": "2 January, 2025"
+      },
+      {
+        "id": 3,
+        "category": "Marketing",
+        "title": "Product Images Update",
+        "priority": "Low",
+        "status": "in-progress",
+        "users": [109, 110],
+        "subtasks": 3,
+        "comments": 2,
+        "dueDate": "Next Week"
+      },
+      {
+        "id": 4,
+        "category": "Design",
+        "title": "Mobile Compatibility",
+        "priority": "High",
+        "status": "todo",
+        "users": [111],
+        "subtasks": 5,
+        "comments": 1,
+        "dueDate": "End of January"
+      },
+      {
+        "id": 5,
+        "category": "Development",
+        "title": "Performance Optimization",
+        "priority": "Medium",
+        "status": "rejected",
+        "users": [112, 113],
+        "subtasks": 4,
+        "comments": 0,
+        "dueDate": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Marketing Campaign",
+    "description": "A project to design and implement a marketing campaign for the new product.",
+    "assigned": [206, 207],
+    "lastUpdated": "2024-12-12T10:00:00Z",
+    "tasks": [
+      {
+        "id": 1,
+        "category": "Marketing",
+        "title": "Social Media Strategy",
+        "priority": "Medium",
+        "status": "in-progress",
+        "users": [109, 110],
+        "subtasks": 5,
+        "comments": 2,
+        "dueDate": "3 January, 2025"
+      },
+      {
+        "id": 2,
+        "category": "Design",
+        "title": "Ad Design",
+        "priority": "High",
+        "status": "todo",
+        "users": [111],
+        "subtasks": 6,
+        "comments": 4,
+        "dueDate": "Next Week"
+      },
+      {
+        "id": 3,
+        "category": "Marketing",
+        "title": "Target Audience Research",
+        "priority": "Low",
+        "status": "approved",
+        "users": [112],
+        "subtasks": 7,
+        "comments": 5,
+        "dueDate": "5 January, 2025"
+      },
+      {
+        "id": 4,
+        "category": "Design",
+        "title": "Banners for Ads",
+        "priority": "Medium",
+        "status": "in-progress",
+        "users": [113],
+        "subtasks": 3,
+        "comments": 2,
+        "dueDate": "8 January, 2025"
+      },
+      {
+        "id": 5,
+        "category": "Marketing",
+        "title": "Email Newsletter Design",
+        "priority": "High",
+        "status": "todo",
+        "users": [114],
+        "subtasks": 4,
+        "comments": 1,
+        "dueDate": "10 January, 2025"
+      }
+    ]
+  }
+]
