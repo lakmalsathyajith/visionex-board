@@ -1,15 +1,16 @@
 import { FunctionComponent } from "react";
-
-import styles from "./Card.module.scss";
-import DotsIcon from "../../icons/DotsIcon";
-import UserProfileIcon from "../../icons/UserProfileIcon";
-import LinkIcon from "../../icons/LinkIcon";
-import MessageIcon from "../../icons/MessageIcon";
-import FlashIcon from "../../icons/FlashIcon";
-import CalendarIcon from "../../icons/CalendarIcon";
+import {
+  DotsIcon,
+  UserProfileIcon,
+  LinkIcon,
+  MessageIcon,
+  FlashIcon,
+  CalendarIcon,
+} from "@icons";
 import getSlicedElementsAndRestCount from "../../utils/getSlicedElementsAndRestCount";
 import { useSwimlaneContext } from "../../context/SwimlaneContext";
 import { Task } from "../../types/dataTypes";
+import styles from "./Card.module.scss";
 
 interface CardProps {
   data: Task;

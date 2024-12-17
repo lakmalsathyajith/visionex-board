@@ -1,18 +1,21 @@
 import { useState } from "react";
-import ArrowRightIcon from "../../../icons/ArrowRight";
-import CalendarIcon from "../../../icons/CalendarIcon";
-import DashboardIcon from "../../../icons/DashboardIcon";
-import FolderIcon from "../../../icons/FolderIcon";
-import InfoCircleIcon from "../../../icons/InfoCircleIcon";
-import MessageIcon from "../../../icons/MessageIcon";
-import SignOutIcon from "../../../icons/SignOutIcon";
-import UserIcon from "../../../icons/UserIcon";
-import styles from "./Sidebar.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/reducers/rootReducer";
-import { setSelectedProject } from "../../../store/actions/projectActions";
+import {
+  ArrowRightIcon,
+  CalendarIcon,
+  DashboardIcon,
+  FolderIcon,
+  InfoCircleIcon,
+  MessageIcon,
+  SignOutIcon,
+  UserIcon,
+} from "@icons";
+import styles from "./Sidebar.module.scss";
+import { RootState } from "@store/reducers/rootReducer";
+import { setSelectedProject } from "@store/actions/projectActions";
 import { Project } from "../../../types/dataTypes";
-import { TypedDispatch } from "../../../store";
+import { TypedDispatch } from "@store";
+
 const Sidebar = () => {
   const [activeDropdown, setActiveDropdown] = useState(false);
   const dispatch = useDispatch<TypedDispatch>();

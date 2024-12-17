@@ -20,7 +20,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",                   // Root of the project
+    "paths": {
+      "@*": ["*"],
+      "@icons*": ["src/icons", "src/icons/*"],    // Map @icons to the icons folder
+      "@components*": ["src/components", "src/components/*"],
+      "@store*": ["src/store*", "src/store"],
+      "@layouts*": ["src/layouts*", "src/layouts"],
+      "@pages*": ["src/pages*", "src/pages"],
+      "@utils*": ["src/utils*", "src/utils", "src/utils/*"]
+    },
   },
   "include": ["src"]
 }

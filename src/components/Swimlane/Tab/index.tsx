@@ -1,7 +1,6 @@
 import { FunctionComponent, ReactElement } from "react";
-import Card from "../../../components/Card";
-import DotsIcon from "../../../icons/DotsIcon";
-import Plus2Icon from "../../../icons/Plus2Icon";
+import { Card } from "@components";
+import { Plus2Icon, DotsIcon } from "@icons";
 import styles from "./../Swimlane.module.scss";
 import { useSwimlaneContext } from "../../../context/SwimlaneContext";
 import { Task } from "../../../types/dataTypes";

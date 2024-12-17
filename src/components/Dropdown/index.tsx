@@ -1,6 +1,5 @@
-import ArrowRightIcon from "../../icons/ArrowRight";
-import FolderIcon from "../../icons/FolderIcon";
-import styles from "./Sidebar.module.scss";
+import { FolderIcon, ArrowRightIcon } from "@icons";
+import styles from "./Dropdown.module.scss";
 const Dropdown = () => {
   return (
     <>

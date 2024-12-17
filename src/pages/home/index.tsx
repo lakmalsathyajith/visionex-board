@@ -1,20 +1,20 @@
 import { useEffect } from "react";
-import Badge from "../../components/Badge";
-import Swimlane from "../../components/Swimlane";
-import PencilIcon from "../../icons/PencilIcon";
-import UserProfileIcon from "../../icons/UserProfileIcon";
-import MainLayout from "../../layouts/main";
+import { Badge, Swimlane } from "@components";
+import { UserProfileIcon, PencilIcon } from "@icons";
+import MainLayout from "@layouts/main";
 import styles from "./Home.module.scss";
 import {
   fetchProjects,
   setSelectedProject,
-} from "../../store/actions/projectActions";
+} from "@store/actions/projectActions";
 import { useDispatch, useSelector } from "react-redux";
-import formatDate from "../../utils/dateFormatter";
-import groupByStatus from "../../utils/groupTasks";
+import {
+  dateFormatter as formatDate,
+  groupTasks as groupByStatus,
+} from "@utils";
 import { SwimlaneContextProvider } from "../../context/SwimlaneContext";
-import { RootState } from "../../store/reducers/rootReducer";
-import { TypedDispatch } from "../../store";
+import { RootState } from "@store/reducers/rootReducer";
+import { TypedDispatch } from "@store";
 
 function HomePage() {
   const dispatch = useDispatch<TypedDispatch>();

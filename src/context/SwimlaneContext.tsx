@@ -6,8 +6,8 @@ import React, {
   DragEvent,
 } from "react";
 import { useDispatch } from "react-redux";
-import { updateTaskStatus } from "../store/actions/projectActions";
-import { TypedDispatch } from "../store";
+import { updateTaskStatus } from "@store/actions/projectActions";
+import { TypedDispatch } from "@store";
 
 type AuthContextType = {
   task: number | null;

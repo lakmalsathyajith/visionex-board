@@ -1,7 +1,11 @@
+import { FC } from "react"; // FC stands for FunctionComponent
+
+export type IconType = FC<React.SVGProps<SVGSVGElement>>;
+
 import ArrowDown from "./ArrowDown";
 import ArrowUp from "./ArrowUp";
 import ArrowLeft from "./ArrowLeft";
-import ArrowRight from "./ArrowRight";
+import ArrowRightIcon from "./ArrowRight";
 import CalendarIcon from "./CalendarIcon";
 import DashboardIcon from "./DashboardIcon";
 import DotsIcon from "./DotsIcon";
@@ -20,7 +24,7 @@ export {
   ArrowDown,
   ArrowUp,
   ArrowLeft,
-  ArrowRight,
+  ArrowRightIcon,
   CalendarIcon,
   DashboardIcon,
   DotsIcon,
@@ -29,9 +33,9 @@ export {
   LinkIcon,
   MessageIcon,
   PencilIcon,
-  SignOutIcon,
   UserProfileIcon,
   Plus2Icon,
   UserIcon,
   FolderIcon,
+  SignOutIcon,
 };
