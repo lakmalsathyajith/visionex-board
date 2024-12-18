@@ -29,15 +29,10 @@
   &__workspace-logo {
     padding: 0.875rem;
     display: flex;
-    /* Center content if necessary */
     justify-content: center;
-    /* Center content horizontally */
     align-items: center;
-    /* Center content vertically */
     border: 1px solid #ccc;
-    /* Optional: border */
     border-radius: 50%;
-    /* Optional: rounded corners */
   }
 
   &__workspace-logo-image {
@@ -73,8 +68,6 @@
   &__menu-item-icon {
     width: 24px;
     height: 24px;
-    fill: vars.$neutral-4-color;
-    stroke: vars.$neutral-4-color;
     transition: fill 0.3s ease, stroke 0.3s ease;
 
     &:hover {
