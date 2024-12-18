@@ -1,5 +1,12 @@
-import { FC } from "react"; // FC stands for FunctionComponent
+import { FC } from "react";
 
+export interface IconProps {
+  variant?: "primary" | "default" | "active" | "faded";
+  className?: string;
+  height?: number;
+  width?: number;
+  currentColor?: boolean;
+}
 export type IconType = FC<React.SVGProps<SVGSVGElement>>;
 
 import ArrowDown from "./ArrowDown";

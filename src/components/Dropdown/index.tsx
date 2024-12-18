@@ -1,36 +1,39 @@
-import { FolderIcon, ArrowRightIcon } from "@icons";
-import styles from "./Dropdown.module.scss";
-const Dropdown = () => {
+import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import "./Dropdown.module.scss"; // Import CSS for animation classes
+
+interface DropdownProps {
+  title: string;
+  items: string[];
+}
+
+const Dropdown: React.FC<DropdownProps> = ({ title, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <>
-      <li className={styles["sidebar__menu-item"]}>
-        <FolderIcon className={styles["sidebar__menu-item-icon"]} />
-        Boards
-        <img
-          className={styles["sidebar__workspace-dropdown-icon"]}
-          src="assets/icons/Arrow Down.svg"
-          alt="Dropdown icon"
-        />
-      </li>
-      <ul className={styles["sidebar__dropdown-list"]}>
-        <li className={styles["sidebar__dropdown-item"]}>
-          <ArrowRightIcon />
-          Create Routes
-        </li>
-        <li className={styles["sidebar__dropdown-item"]}>
-          <ArrowRightIcon />
-          Create Routes
-        </li>
-        <li className={styles["sidebar__dropdown-item"]}>
-          <ArrowRightIcon />
-          Create Routes
-        </li>
-        <li className={styles["sidebar__dropdown-item"]}>
-          <ArrowRightIcon />
-          Create Routes
-        </li>
-      </ul>
-    </>
+    <div className="dropdown">
+      <button className="dropdown__toggle" onClick={toggleDropdown}>
+        {title}
+      </button>
+      <CSSTransition
+        in={isOpen}
+        timeout={300} // Animation duration
+        classNames="dropdown"
+        unmountOnExit
+      >
+        <div className="dropdown__menu">
+          {items.map((item, index) => (
+            <div className="dropdown__item" key={index}>
+              {item}
+            </div>
+          ))}
+        </div>
+      </CSSTransition>
+    </div>
   );
 };
 

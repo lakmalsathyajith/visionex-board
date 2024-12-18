@@ -52,7 +52,7 @@ h6 {
 /* Reset End */
 
 :root {
-  --active-icon-color: #{vars.$primary-color};
+  --primary-icon-color: #{vars.$primary-color};
   --default-icon-color: #{vars.$neutral-4-color};
   --faded-icon-color: #{vars.$neutral-5-color};
 }

@@ -1,12 +1,6 @@
 import { FunctionComponent } from "react";
 import useIconColor from "./useIconColor";
-
-interface IconProps {
-  variant?: "default" | "active";
-  className?: string;
-  height?: number;
-  width?: number;
-}
+import { IconProps } from ".";
 
 const ArrowRightIcon: FunctionComponent<IconProps> = ({
   variant = "default",
@@ -14,9 +8,8 @@ const ArrowRightIcon: FunctionComponent<IconProps> = ({
   height = 24,
   width = 24,
 }) => {
-  const { activeColor, defaultColor } = useIconColor();
+  const { fillColor } = useIconColor(variant);
 
-  const fillColor = variant === "active" ? activeColor : defaultColor;
   return (
     <svg
       width={width}

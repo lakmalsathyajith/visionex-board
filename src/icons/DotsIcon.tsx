@@ -14,9 +14,7 @@ const DotsIcon: FunctionComponent<IconProps> = ({
   height = 24,
   width = 24,
 }) => {
-  const { activeColor, defaultColor } = useIconColor();
-
-  const fillColor = variant === "active" ? activeColor : defaultColor;
+  const { fillColor } = useIconColor(variant);
   return (
     <svg
       width={width}

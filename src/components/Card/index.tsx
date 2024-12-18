@@ -7,7 +7,7 @@ import {
   FlashIcon,
   CalendarIcon,
 } from "@icons";
-import getSlicedElementsAndRestCount from "../../utils/getSlicedElementsAndRestCount";
+import getSlicedElementsAndRestCount from "@utils/getSlicedElementsAndRestCount";
 import { useSwimlaneContext } from "../../context/SwimlaneContext";
 import { Task } from "../../types/dataTypes";
 import styles from "./Card.module.scss";
