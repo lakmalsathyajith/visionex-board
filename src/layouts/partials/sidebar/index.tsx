@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   ArrowRightIcon,
   CalendarIcon,
   DashboardIcon,
-  FolderIcon,
   InfoCircleIcon,
   MessageIcon,
   SignOutIcon,
@@ -15,11 +13,10 @@ import { RootState } from "@store/reducers/rootReducer";
 import { setSelectedProject } from "@store/actions/projectActions";
 import { Project } from "../../../types/dataTypes";
 import { TypedDispatch } from "@store";
+import { Dropdown } from "@src/components";
 
 const Sidebar = () => {
-  const [activeDropdown, setActiveDropdown] = useState(false);
   const dispatch = useDispatch<TypedDispatch>();
-  const toggleDropdown = () => setActiveDropdown(!activeDropdown);
   const { projects } = useSelector((state: RootState) => state.projects);
   const setProject = (project: Project) => {
     dispatch(setSelectedProject(project));
@@ -51,29 +48,19 @@ const Sidebar = () => {
             <DashboardIcon className={styles["sidebar__menu-item-icon"]} />
             Dashboard
           </li>
-          <li className={styles["sidebar__menu-item"]} onClick={toggleDropdown}>
-            <FolderIcon className={styles["sidebar__menu-item-icon"]} />
-            Boards
-            <img
-              className={styles["sidebar__workspace-dropdown-icon"]}
-              src="assets/icons/Arrow Down.svg"
-              alt="Dropdown icon"
-            />
-          </li>
-          {activeDropdown && (
-            <ul className={styles["sidebar__dropdown-list"]}>
+          <li className={styles["sidebar__menu-item"]}>
+            <Dropdown title="Boards">
               {projects.map((project) => (
-                <li
-                  className={styles["sidebar__dropdown-item"]}
+                <Dropdown.Item
                   key={project.id}
                   onClick={() => setProject(project)}
                 >
                   <ArrowRightIcon />
                   {project.name}
-                </li>
+                </Dropdown.Item>
               ))}
-            </ul>
-          )}
+            </Dropdown>
+          </li>
           <li className={styles["sidebar__menu-item"]}>
             <MessageIcon className={styles["sidebar__menu-item-icon"]} />
             Messages

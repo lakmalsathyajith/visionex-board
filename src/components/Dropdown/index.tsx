@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import { FunctionComponent, ReactNode, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import "./Dropdown.module.scss"; // Import CSS for animation classes
+import styles from "./Dropdown.module.scss"; // Import CSS for animation classes
+import Item, { DropdownItemProps } from "./Item";
+import { ArrowDown, FolderIcon } from "@src/icons";
 
 interface DropdownProps {
   title: string;
-  items: string[];
+  children: ReactNode;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ title, items }) => {
+const Dropdown: FunctionComponent<DropdownProps> & {
+  Item: FunctionComponent<DropdownItemProps>;
+} = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -15,26 +19,27 @@ const Dropdown: React.FC<DropdownProps> = ({ title, items }) => {
   };
 
   return (
-    <div className="dropdown">
-      <button className="dropdown__toggle" onClick={toggleDropdown}>
-        {title}
-      </button>
+    <div className={styles["dropdown"]} onClick={toggleDropdown}>
+      <div className={styles["dropdown__toggle"]}>
+        <div className={styles["dropdown__toggle-title"]}>
+          <FolderIcon />
+          {title}
+        </div>
+        <ArrowDown />
+      </div>
+
       <CSSTransition
         in={isOpen}
-        timeout={300} // Animation duration
+        timeout={300}
         classNames="dropdown"
         unmountOnExit
       >
-        <div className="dropdown__menu">
-          {items.map((item, index) => (
-            <div className="dropdown__item" key={index}>
-              {item}
-            </div>
-          ))}
-        </div>
+        <div className={styles["dropdown__menu"]}>{children}</div>
       </CSSTransition>
     </div>
   );
 };
+
+Dropdown.Item = Item;
 
 export default Dropdown;

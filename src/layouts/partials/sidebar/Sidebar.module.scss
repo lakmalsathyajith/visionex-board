@@ -69,11 +69,6 @@
     width: 24px;
     height: 24px;
     transition: fill 0.3s ease, stroke 0.3s ease;
-
-    &:hover {
-      fill: vars.$primary-color;
-      stroke: vars.$primary-color;
-    }
   }
 
   &__menu-item {
