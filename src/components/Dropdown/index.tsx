@@ -2,7 +2,7 @@ import { FunctionComponent, ReactNode, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import styles from "./Dropdown.module.scss"; // Import CSS for animation classes
 import Item, { DropdownItemProps } from "./Item";
-import { ArrowDown, FolderIcon } from "@src/icons";
+import { ArrowDown, ArrowUp, FolderIcon } from "@src/icons";
 
 interface DropdownProps {
   title: string;
@@ -31,7 +31,7 @@ const Dropdown: FunctionComponent<DropdownProps> & {
             <FolderIcon />
             {title}
           </div>
-          <ArrowDown />
+          {isOpen ? <ArrowUp /> : <ArrowDown />}
         </div>
       </div>
       <CSSTransition
