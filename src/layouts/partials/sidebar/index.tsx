@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  ArrowRightIcon,
   CalendarIcon,
   DashboardIcon,
   InfoCircleIcon,
   MessageIcon,
   SignOutIcon,
   UserIcon,
+  UserProfileIcon,
 } from "@icons";
 import styles from "./Sidebar.module.scss";
 import { RootState } from "@store/reducers/rootReducer";
@@ -25,11 +25,15 @@ const Sidebar = () => {
     <aside className={styles["sidebar"]}>
       <div className={styles["sidebar__workspace"]}>
         <div className={styles["sidebar__workspace-main"]}>
-          <img
+          <div className={styles["sidebar__workspace-logo"]}>
+            <UserProfileIcon />
+          </div>
+          {/* <img
             className={styles["sidebar__workspace-logo-image"]}
             src="assets/icons/User profile.svg"
             alt="Workspace logo"
-          />
+          /> */}
+
           <div className={styles["sidebar__workspace-details"]}>
             <h3 className={styles["sidebar__workspace-title"]}>workspace</h3>
             <h2 className={styles["sidebar__workspace-folder"]}>Root folder</h2>
@@ -44,34 +48,41 @@ const Sidebar = () => {
 
       <nav className={styles["sidebar__menu"]}>
         <ul className={styles["sidebar__menu-list"]}>
-          <li className={styles["sidebar__menu-item"]}>
-            <DashboardIcon className={styles["sidebar__menu-item-icon"]} />
-            Dashboard
+          <li>
+            <div className={styles["sidebar__menu-item"]}>
+              <DashboardIcon className={styles["sidebar__menu-item-icon"]} />
+              Dashboard
+            </div>
           </li>
-          <li className={styles["sidebar__menu-item"]}>
+          <li>
             <Dropdown title="Boards">
               {projects.map((project) => (
                 <Dropdown.Item
                   key={project.id}
                   onClick={() => setProject(project)}
                 >
-                  <ArrowRightIcon />
                   {project.name}
                 </Dropdown.Item>
               ))}
             </Dropdown>
           </li>
-          <li className={styles["sidebar__menu-item"]}>
-            <MessageIcon className={styles["sidebar__menu-item-icon"]} />
-            Messages
+          <li>
+            <div className={styles["sidebar__menu-item"]}>
+              <MessageIcon className={styles["sidebar__menu-item-icon"]} />
+              Messages
+            </div>
           </li>
-          <li className={styles["sidebar__menu-item"]}>
-            <CalendarIcon className={styles["sidebar__menu-item-icon"]} />
-            Calendar
+          <li>
+            <div className={styles["sidebar__menu-item"]}>
+              <CalendarIcon className={styles["sidebar__menu-item-icon"]} />
+              Calendar
+            </div>
           </li>
-          <li className={styles["sidebar__menu-item"]}>
-            <UserIcon className={styles["sidebar__menu-item-icon"]} />
-            Team Members
+          <li>
+            <div className={styles["sidebar__menu-item"]}>
+              <UserIcon className={styles["sidebar__menu-item-icon"]} />
+              Team Members
+            </div>
           </li>
         </ul>
       </nav>
