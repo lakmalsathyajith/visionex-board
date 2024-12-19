@@ -5,6 +5,11 @@ interface BadgeProps {
   variant: "todo" | "inprogress" | "approved" | "reject";
 }
 
+/**
+ * MyComponent is a reusable button component.
+ *
+ * @param {variant} - The text to display inside the button.
+ */
 const Badge: FunctionComponent<BadgeProps> = ({ variant }) => {
   let label = "";
   const className = `${styles["badge"]} ${styles["badge--" + variant]}`;

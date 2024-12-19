@@ -24,3 +24,4 @@ design/Header/.DS_Store/
 *.njsproj
 *.sln
 *.sw?
+*storybook.log
