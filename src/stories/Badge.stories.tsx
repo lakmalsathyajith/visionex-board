@@ -1,6 +1,6 @@
 import { fn } from "@storybook/test";
 
-import Task from "./index";
+import Task from "../components/Badge";
 
 export const ActionsData = {
   onArchiveTask: fn(),
@@ -11,7 +11,6 @@ export default {
   component: Task,
   title: "Badge",
   tags: ["autodocs"],
-  //👇 Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
   parameters: {
     layout: "centered",

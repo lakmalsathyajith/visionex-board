@@ -12,6 +12,7 @@
   gap: 0.25rem;
   min-height: 140px;
   cursor: move;
+  box-shadow: 5px 5px 1px vars.$border-color;
 
   &__top-bar {
     display: flex;
