@@ -8,9 +8,9 @@ interface BadgeProps {
 }
 
 /**
- * MyComponent is a reusable button component.
+ * Badge is a reusable badge component.
  *
- * @param {variant} - The text to display inside the button.
+ * @param {variant} - The text to display inside the badge.
  */
 const Badge: FunctionComponent<BadgeProps> = ({ variant, className }) => {
   let label = "";
