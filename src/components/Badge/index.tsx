@@ -1,8 +1,10 @@
 import { FunctionComponent } from "react";
 import styles from "./Badge.module.scss";
+import { Variant } from "@src/types/dataTypes";
 
 interface BadgeProps {
-  variant: "todo" | "inprogress" | "approved" | "reject";
+  variant: Variant;
+  className?: string;
 }
 
 /**
@@ -10,14 +12,16 @@ interface BadgeProps {
  *
  * @param {variant} - The text to display inside the button.
  */
-const Badge: FunctionComponent<BadgeProps> = ({ variant }) => {
+const Badge: FunctionComponent<BadgeProps> = ({ variant, className }) => {
   let label = "";
-  const className = `${styles["badge"]} ${styles["badge--" + variant]}`;
+  const classNames = `${styles["badge"]} ${
+    styles["badge--" + variant]
+  } ${className}`;
   switch (variant) {
     case "approved":
       label = "Approved";
       break;
-    case "inprogress":
+    case "in-progress":
       label = "In Progress";
       break;
     case "reject":
@@ -27,7 +31,7 @@ const Badge: FunctionComponent<BadgeProps> = ({ variant }) => {
       label = "To Do";
       break;
   }
-  return <h2 className={className}>{label}</h2>;
+  return <h2 className={classNames}>{label}</h2>;
 };
 
 export default Badge;

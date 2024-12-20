@@ -9,8 +9,8 @@ interface IconProps {
 
 const UserProfileIcon: FunctionComponent<IconProps> = ({
   className = "",
-  height = "auto",
-  width = "auto",
+  height = undefined,
+  width = undefined,
 }) => {
   return (
     <svg

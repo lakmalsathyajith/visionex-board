@@ -45,7 +45,10 @@ function HomePage() {
               <h1 className={styles["project__title"]}>
                 {selectedProject.name}
               </h1>
-              <span className={styles["project__status"]}>In progress</span>
+              <Badge
+                variant={selectedProject.status}
+                className={styles["project__status"]}
+              />
             </div>
             <h2 className={styles["project__description"]}>
               {selectedProject.description}
@@ -90,7 +93,7 @@ function HomePage() {
             id="todo"
           />
           <Swimlane.Tab
-            label={<Badge variant="inprogress" />}
+            label={<Badge variant="in-progress" />}
             data={groupedTasks["in-progress"]}
             id="in-progress"
           />

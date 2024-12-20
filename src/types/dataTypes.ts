@@ -1,9 +1,10 @@
+export type Variant = "todo" | "in-progress" | "approved" | "reject";
 export interface Task {
   id: number;
   category: string;
   title: string;
   priority: string;
-  status: "todo" | "in-progress" | "approved" | "rejected";
+  status: Variant;
   users: number[];
   subtasks: number;
   comments: number;
@@ -19,4 +20,5 @@ export interface Project {
   assigned: number[];
   lastUpdated: string;
   tasks: Task[];
+  status: Variant;
 }

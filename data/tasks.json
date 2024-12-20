@@ -4,6 +4,7 @@
     "name": "Create Routes",
     "description": "A project to organize and manage design-related tasks.",
     "assigned": [200, 201],
+    "status": "todo",
     "lastUpdated": "2024-12-15T12:00:00Z",
     "tasks": [
       {
@@ -69,6 +70,7 @@
     "description": "Redesigning the mobile application to enhance user experience.",
     "assigned": [202, 203],
     "lastUpdated": "2024-12-14T11:00:00Z",
+    "status": "in-progress",
     "tasks": [
       {
         "id": 1,
@@ -91,6 +93,7 @@
         "subtasks": 1,
         "comments": 2,
         "dueDate": "5 January, 2025"
+        
       },
       {
         "id": 3,
@@ -133,6 +136,7 @@
     "description": "Improving the design and functionality of the e-commerce platform.",
     "assigned": [204, 205],
     "lastUpdated": "2024-12-10T15:00:00Z",
+    "status": "in-progress",
     "tasks": [
       {
         "id": 1,
@@ -197,6 +201,7 @@
     "description": "A project to design and implement a marketing campaign for the new product.",
     "assigned": [206, 207],
     "lastUpdated": "2024-12-12T10:00:00Z",
+    "status": "approved",
     "tasks": [
       {
         "id": 1,

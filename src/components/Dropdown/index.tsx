@@ -21,9 +21,11 @@ const Dropdown: FunctionComponent<DropdownProps> & {
   };
 
   return (
-    <div className={`${styles["dropdown"]} ${className}`}>
+    <div className={`${styles["dropdown"]}  ${className}`}>
       <div
-        className={`${styles["dropdown__container"]}`}
+        className={`${styles["dropdown__container"]} ${
+          isOpen ? styles["dropdown__container--active"] : ""
+        }`}
         onClick={toggleDropdown}
       >
         <div className={styles["dropdown__toggle"]}>
@@ -39,8 +41,14 @@ const Dropdown: FunctionComponent<DropdownProps> & {
         nodeRef={nodeRef}
         timeout={300}
         classNames="dropdown"
+        unmountOnExit
       >
-        <div ref={nodeRef} className={styles["dropdown__menu"]}>
+        <div
+          ref={nodeRef}
+          className={`${styles["dropdown__menu"]} ${
+            isOpen ? styles["dropdown__menu--active"] : ""
+          }`}
+        >
           {children}
         </div>
       </CSSTransition>
