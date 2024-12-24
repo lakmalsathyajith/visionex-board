@@ -12,11 +12,23 @@
   font-weight: 500;
   border-bottom: 1px solid vars.$border-color;
 
+  &__menu {
+    display: none;
+  }
+
+  @media (max-width: 1150px) {
+    &__menu {
+      display: flex;
+    }
+  }
+
+
+
   &__logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
 
   &__create-button {

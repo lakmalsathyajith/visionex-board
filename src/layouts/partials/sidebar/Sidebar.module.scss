@@ -11,13 +11,19 @@
   min-height: calc(100vh - 80px);
   overflow-y: auto;
 
+  @media (max-width: 768px) {}
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
+
+
 
   &__workspace {
     display: flex;
     border-radius: 0.5rem;
     padding: 0.5rem 0.75rem;
     border: 1px solid vars.$border-color;
-
     justify-content: space-between;
 
   }
@@ -38,7 +44,6 @@
   &__workspace-details {
     display: flex;
     flex-direction: column;
-
   }
 
   &__workspace-title {
@@ -116,4 +121,23 @@
     fill: vars.$background-color;
     stroke: vars.$background-color;
   }
+
+  @media (min-width: 1150px) and (max-width: 1220px) {
+    &__workspace-title {
+      display: flex;
+      color: vars.$neutral-5-color;
+      font-size: 0.625rem;
+    }
+
+    &__workspace-folder {
+      color: vars.$neutral-3-color;
+      font-size: 0.825rem;
+      line-height: 1.5rem;
+    }
+
+    &__menu-list {
+      font-size: 0.825rem;
+    }
+  }
+
 }

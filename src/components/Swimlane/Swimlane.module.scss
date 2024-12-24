@@ -3,9 +3,9 @@
 .swimlane {
   grid-area: 3/-1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   background-color: vars.$neutral-7-color;
-  flex-grow: 1;
+  padding-bottom: 1rem;
 
   &__header {
     display: flex;

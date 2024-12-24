@@ -25,7 +25,7 @@ export const Default = {
 
 export const inprogress = {
   args: {
-    variant: "inprogress",
+    variant: "in-progress",
   },
 };
 

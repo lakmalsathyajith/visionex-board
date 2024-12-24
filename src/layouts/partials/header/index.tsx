@@ -1,9 +1,16 @@
+import HamburgerIcon from "@src/icons/HamburgerIcon";
 import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
     <header className={styles["header"]}>
       <div className={styles["header__logo"]}>
+        {/* <HamburgerIcon variant="primary" /> */}
+        <img
+          className={styles["header__menu"]}
+          src="/assets/icons/Hamburger.svg"
+          alt="Menu"
+        />
         <img
           className={styles["header__logo-image"]}
           src="/assets/logo.svg"
