@@ -12,7 +12,6 @@ import {
   dateFormatter as formatDate,
   groupTasks as groupByStatus,
 } from "@utils";
-import { SwimlaneContextProvider } from "../../context/SwimlaneContext";
 import { RootState } from "@store/reducers/rootReducer";
 import { TypedDispatch } from "@store";
 
@@ -85,30 +84,28 @@ function HomePage() {
           Last updated on: {formatDate(selectedProject.lastUpdated)}
         </div>
       </section>
-      <SwimlaneContextProvider>
-        <Swimlane>
-          <Swimlane.Tab
-            label={<Badge variant="todo" />}
-            data={groupedTasks["todo"]}
-            id="todo"
-          />
-          <Swimlane.Tab
-            label={<Badge variant="in-progress" />}
-            data={groupedTasks["in-progress"]}
-            id="in-progress"
-          />
-          <Swimlane.Tab
-            label={<Badge variant="approved" />}
-            data={groupedTasks["approved"]}
-            id="approved"
-          />
-          <Swimlane.Tab
-            label={<Badge variant="reject" />}
-            data={groupedTasks["rejected"]}
-            id="rejected"
-          />
-        </Swimlane>
-      </SwimlaneContextProvider>
+      <Swimlane>
+        <Swimlane.Tab
+          label={<Badge variant="todo" />}
+          data={groupedTasks["todo"]}
+          id="todo"
+        />
+        <Swimlane.Tab
+          label={<Badge variant="in-progress" />}
+          data={groupedTasks["in-progress"]}
+          id="in-progress"
+        />
+        <Swimlane.Tab
+          label={<Badge variant="approved" />}
+          data={groupedTasks["approved"]}
+          id="approved"
+        />
+        <Swimlane.Tab
+          label={<Badge variant="reject" />}
+          data={groupedTasks["rejected"]}
+          id="rejected"
+        />
+      </Swimlane>
     </MainLayout>
   );
 }
